@@ -1,0 +1,90 @@
+{
+  "getNewsList": [
+    {
+      "id": 1,
+      "title": "国服王者五路上分首选 老鼠洛下路最佳组合  05-06",
+      "url": "http://starcraft.com"
+    },
+    {
+      "id": 2,
+      "title": "教学 9.9版本五大高胜率AD 下路上分首选德莱文  05-05",
+      "url": "http://warcraft.com"
+    },
+    {
+      "id": 3,
+      "title": "娱乐 征服者诺手称霸T1 版本九大OP套路  05-05",
+      "url": "http://overwatch.com"
+    },
+    {
+      "id": 4,
+      "title": "教学 快乐剑男成了！上路黑科技偷钱流盖伦  05-04",
+      "url": "http://hearstone.com"
+    },
+    {
+      "id": 5,
+      "title": "季中试炼2019开启!  05-02",
+      "url" : "https://lol.qq.com/"
+    },
+    {
+      "id": 6,
+      "title": "公告 9.9版本更新：征服者 阿利斯塔上线！  05-01",
+      "url" : "https://lol.qq.com/"
+    },
+    {
+      "id": 7,
+      "title": "赛事 TL携手FW成功晋级！MSI小组赛已确定五席  05-07",
+      "url" : "https://lol.qq.com/"
+    },
+    {
+      "id": 8,
+      "title": "视频 Doublelift：我觉得会3比0带走PVB！  05-06",
+      "url" : "https://lol.qq.com/"
+    },
+    {
+      "id": 9,
+      "title": "新闻 游戏玩法随想5月3日：高分段的匹配调整  05-06",
+      "url" : "https://lol.qq.com/"
+    }
+  ],
+  "login": {
+    "username": "yudongdong",
+    "userId": 123123
+  },
+  "getPrice": {
+    "amount": 678
+  },
+  "createOrder": {
+    "orderId": "6djk979"
+  },
+  "getOrderList": {
+    "list": [
+      {
+        "orderId": "ddj123",
+        "product": "数据统计",
+        "version": "高级版",
+        "period": "1年",
+        "buyNum": 2,
+        "date": "2016-10-10",
+        "amount": "500元"
+      },
+      {
+        "orderId": "yuj583",
+        "product": "流量分析",
+        "version": "户外版",
+        "period": "3个月",
+        "buyNum": 1,
+        "date": "2016-5-2",
+        "amount": "2200元"
+      },
+      {
+        "orderId": "pmd201",
+        "product": "广告发布",
+        "version": "商铺版",
+        "period": "3年",
+        "buyNum": 12,
+        "date": "2016-8-3",
+        "amount": "7890元"
+      }
+    ]
+  }
+}
