@@ -68,22 +68,22 @@ export default {
       slides: [
         {
           src: require('../assets/slideShow/pic1.jpg'),
-          title: 'xxx1',
+          title: 'React学习',
           href: 'detail/analysis'
         },
         {
           src: require('../assets/slideShow/pic2.jpg'),
-          title: 'xxx2',
+          title: '算法',
           href: 'detail/count'
         },
         {
           src: require('../assets/slideShow/pic3.jpg'),
-          title: 'xxx3',
+          title: 'Android学习',
           href: 'http://xxx.xxx.com'
         },
         {
           src: require('../assets/slideShow/pic4.jpg'),
-          title: 'xxx4',
+          title: 'React Native',
           href: 'detail/forecast'
         }
       ],

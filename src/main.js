@@ -5,9 +5,12 @@ import Layout from './components/layout'
 import IndexPage from './pages/index'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
+import vDialogs from 'v-dialogs';
+
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
+Vue.use(vDialogs, {  });
 let router = new VueRouter({
 	mode: 'history',
 	routes:[

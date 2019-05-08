@@ -10,7 +10,7 @@
           </transition>
       </a>
     </div>
-    <h2>{{ slider[nowIndex].title }}</h2>
+    <h2>{{ slides[nowIndex].title }}</h2>
     <ul class="slide-pages">
       <li @click="goto(prevIndex)">&lt;</li>
       <li v-for="(item,index) in slides" @click="goto(index)">

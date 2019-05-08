@@ -5,11 +5,11 @@
 				<img src="../assets/logo.png">
 				<div class="head-nav">
 				  <ul class="nav-list">
-				  	<li>登录</li>
+				  	<li @click="openLogin">登录</li>
 						<li class="nav-pile">|</li>
-				  	<li>注册</li>
+				  	<li @click="openRegist">注册</li>
 						<li class="nav-pile">|</li>
-				  	<li>关于</li>
+				  	<li @click="about">关于</li>
 				  </ul>	
 				</div>
 			</div>
@@ -28,11 +28,59 @@
 </template>
 
 <script>
+  import  myLogin from  '../myLogin'
+  import  myRegist from  '../myLogin'
 export default {
   name: 'HelloWorld',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods: {
+    openLogin(){
+      this.$dlg.modal(myLogin, {
+        title:'Login',
+        width: 350,
+        height: 230,
+        //send params to inner component
+        params: {
+          name: 'Terry Zeng'
+        },
+        //modal dialog close callback
+        //data: inner component call 'this.$emit.('close', data)'
+        //to close modal and return data
+        callback: data=>{
+          //alert selected result
+          this.$dlg.alert(`You selected ${data.companyName} company`);
+        }
+      });
+    },
+    openRegist (){
+      this.$dlg.modal(myLogin, {
+        width: 350,
+        height: 230,
+        title: 'Regist',
+        //send params to inner component
+        params: {
+          name: 'Terry Zeng'
+        },
+        //modal dialog close callback
+        //data: inner component call 'this.$emit.('close', data)'
+        //to close modal and return data
+        callback: data=>{
+          //alert selected result
+          this.$dlg.alert(`You selected ${data.companyName} company`);
+        }
+      });
+    },
+    about(){
+      this.$dlg.alert('本报告在调研数据的基础上，采用定性与定量相结合的方式深入分析了专车市场发展的驱动因素与阻碍因素、专车市场背后的产业格局、专车企业的竞争格局、用户对专车市场的依赖程度、专车对其他交通工具运力的补充效应等，通过这五个章节的研究反映专车市场的发展态势和面临的问题。报告力求客观、深入、准确地反映中国专车市场发展情况，为政府、企事业单位和社会各界提供决策依据。', {
+        width: 350,
+        height: 300,
+        messageType: 'info',
+        language: 'en'
+      });
     }
   }
 }
@@ -101,8 +149,8 @@ body {
 .app-head {
   background: #363636;
   color: #b2b2b2;
-  height: 90px;
-  line-height: 90px;
+  height: 70px;
+  line-height: 70px;
   width: 100%;
 }
 .app-head-inner {

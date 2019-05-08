@@ -107,14 +107,14 @@ apiServer.listen(8000,function () {
 //   })
 
 
-apiServer.use('/api', apiRouter);
-apiServer.listen(port + 1, function (err) {
-  if (err) {
-    console.log(err)
-    return
-  }
-  console.log('Listening at http://localhost:' + (port + 1) + '\n')
-})
+// apiServer.use('/api', apiRouter);
+// apiServer.listen(port + 1, function (err) {
+//   if (err) {
+//     console.log(err)
+//     return
+//   }
+//   console.log('Listening at http://localhost:' + (port + 1) + '\n')
+// })
 
 module.exports = new Promise((resolve, reject) => {
   portfinder.basePort = process.env.PORT || config.dev.port
