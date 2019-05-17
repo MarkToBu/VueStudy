@@ -23,32 +23,32 @@
     {
       "id": 5,
       "title": "季中试炼2019开启!  05-02",
-      "url" : "https://lol.qq.com/"
+      "url": "https://lol.qq.com/"
     },
     {
       "id": 6,
       "title": "公告 9.9版本更新：征服者 阿利斯塔上线！  05-01",
-      "url" : "https://lol.qq.com/"
+      "url": "https://lol.qq.com/"
     },
     {
       "id": 7,
       "title": "赛事 TL携手FW成功晋级！MSI小组赛已确定五席  05-07",
-      "url" : "https://lol.qq.com/"
+      "url": "https://lol.qq.com/"
     },
     {
       "id": 8,
       "title": "视频 Doublelift：我觉得会3比0带走PVB！  05-06",
-      "url" : "https://lol.qq.com/"
+      "url": "https://lol.qq.com/"
     },
     {
       "id": 9,
       "title": "新闻 游戏玩法随想5月3日：高分段的匹配调整  05-06",
-      "url" : "https://lol.qq.com/"
+      "url": "https://lol.qq.com/"
     }
   ],
-  "login": {
-    "username": "yudongdong",
-    "userId": 123123
+  "getLoginInfo": {
+    "username": "aaa",
+    "password": "bbb"
   },
   "getPrice": {
     "amount": 678

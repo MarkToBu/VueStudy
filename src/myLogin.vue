@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
     <p>
       <span>UserName:</span><input type="text" class="form-control" v-model="name" placeholder="Please Enter UserName">
     </p>
@@ -7,17 +7,17 @@
       <span> PassWord:</span> <input type="password" class="form-control" v-model="password"
                                      placeholder="Please Enter Password">
     </p>
-    <!--<div>-->
-    <!--Company:-->
-    <!--<div class="input-group">-->
-    <!--<input type="text" class="form-control" disabled="disabled"-->
-    <!--v-model="company" placeholder="Please choose a company">-->
-    <!--<span class="input-group-append">-->
-    <!--<button class="btn btn-outline-secondary" type="button"-->
-    <!--@click="chooseCompany">Choose</button>-->
-    <!--</span>-->
-    <!--</div>-->
-    <!--</div>-->
+    <div v-if="isShowCompany">
+    Company:
+    <div class="input-group">
+    <input type="text" class="form-control" disabled="disabled"
+    v-model="company" placeholder="Please choose a company">
+    <span class="input-group-append">
+    <button class="btn btn-outline-secondary" type="button"
+    @click="chooseCompany">Choose</button>
+    </span>
+    </div>
+    </div>
     <p style="margin-top: 10px;">
       <button type="button"
               class="btn btn-primary mx-3" style="float: right;"
@@ -34,28 +34,36 @@
   export default {
     props: {
       // name: String
+      isShowCompany:{
+        type: Boolean,
+        default: false
+      }
+
     },
     data() {
       return {
-        company: '',
-        age: 20
+        name: '',
+        password: '',
+        item: {}
       }
     },
     methods: {
       ok() {
         //close current modal dialog and return data
+        this.item.name = this.name;
+        this.item.password = this.password;
         this.$emit('close', {item: this.item});
       },
-      // chooseCompany(){
-      //   this.$dlg.modal(cp, {
-      //     width: 400,
-      //     height: 300,
-      //     title: 'Company list',
-      //     callback: data=>{
-      //       this.company = data && data.name;
-      //     }
-      //   });
-      // }
+      chooseCompany(){
+        this.$dlg.modal(cp, {
+          width: 400,
+          height: 300,
+          title: 'Company list',
+          callback: data=>{
+            this.company = data && data.name;
+          }
+        });
+      }
     },
     name: "MyLogin"
   }

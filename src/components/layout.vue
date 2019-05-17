@@ -2,10 +2,14 @@
   <div>
 		<div class="app-head">
 			<div class="app-head-inner">
-				<img src="../assets/logo.png">
+				<router-link :to="{ path:'/' }">  <img src="../assets/logo.png"></router-link>
 				<div class="head-nav">
 				  <ul class="nav-list">
-				  	<li @click="openLogin">登录</li>
+				  	<li >{{ name }}</li>
+						<li v-if="name !== ''" class="nav-pile">|</li>
+
+            <li v-if="name !== ''" >退出</li>
+            <li v-if="name === ''" @click="openLogin" >登录</li>
 						<li class="nav-pile">|</li>
 				  	<li @click="openRegist">注册</li>
 						<li class="nav-pile">|</li>
@@ -34,7 +38,9 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      data : {},
+      name : ''
     }
   },
   methods: {
@@ -47,17 +53,28 @@ export default {
         params: {
           name: 'Terry Zeng'
         },
-        //modal dialog close callback
-        //data: inner component call 'this.$emit.('close', data)'
-        //to close modal and return data
         callback: data=>{
-          //alert selected result
-          this.$dlg.alert(`You selected ${data.companyName} company`);
+          this.data = data;
+          this.$http.get('http://localhost:8000/getLoginInfo').then(
+            (res) => {
+                 // this.$emit('login-success',res.data)
+                this.check(res.data);
+            },(error) => {
+               console.log(error)
+            }
+          )
         }
       });
     },
+    checkLogin (data){
+      if(res.data.username == this.data.name && res.data.password == this.data.password){
+         this.name = res.data.username;
+      }else{
+          this.$dlg.alert('You Enterd Error Info');
+      }
+    },
     openRegist (){
-      this.$dlg.modal(myLogin, {
+      this.$dlg.modal(myRegist, {
         width: 350,
         height: 230,
         title: 'Regist',

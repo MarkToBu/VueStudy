@@ -6,6 +6,12 @@ import IndexPage from './pages/index'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 import vDialogs from 'v-dialogs';
+import DetailPage from './pages/detail';
+import DetailAnalysis from './pages/detail/analysis';
+import DetailCount from './pages/detail/count';
+import DetailPublish from './pages/detail/publish';
+import DetailForecast from './pages/detail/forecast';
+
 
 
 Vue.use(VueRouter)
@@ -17,7 +23,30 @@ let router = new VueRouter({
 		{
 			path: '/',
 			component: IndexPage
-		}
+		},
+    {
+      path: '/detail',
+      component: DetailPage,
+      redirect: '/detail/analysis',
+      children: [
+        {
+            path: 'analysis',
+            commponent: DetailAnalysis
+        },
+        {
+            path: 'count',
+            commponent: DetailCount
+        },
+        {
+            path: 'publish',
+            commponent: DetailPublish
+        },
+        {
+            path: 'forecast',
+            commponent: DetailForecast
+        }
+      ]
+    }
 	]
 })
 
